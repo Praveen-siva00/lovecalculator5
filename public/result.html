@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        h2 {
+            color: lime;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .result-container {
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block; /* Makes the container fit the content */
+            margin: 20px auto; /* Centers the container */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result-container">
+        <h2 id="names"></h2>
+        <p id="loveScore"></p>
+        <p id="quote"></p>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getParameterByName(name) {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        }
+
+        // Display results
+        document.getElementById("names").innerText = `${getParameterByName("name1")} ❤️ ${getParameterByName("name2")}`;
+        document.getElementById("loveScore").innerText = `Love Score: ${getParameterByName("loveScore")}%`;
+        document.getElementById("quote").innerText = `"${getParameterByName("quote")}"`;
+    </script>
+</body>
+</html>
